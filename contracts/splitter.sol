@@ -10,8 +10,8 @@ contract Splitter {
     	modifier noSelf () { 
     		if(tx.origin == alpha) 
     			throw;
-			if(tx.origin == beta) 
-				throw; 
+		if(tx.origin == beta) 
+			throw; 
  			_
 		}
 
