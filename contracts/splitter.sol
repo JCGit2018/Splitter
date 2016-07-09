@@ -2,7 +2,6 @@
 
 contract Splitter {
 		mapping (address => uint) balances;
-		address originator;
 		address alpha;
 		address beta;
 		uint amount;
@@ -16,7 +15,6 @@ contract Splitter {
 		}
 
 		function Splitter(){
-			originator = tx.origin;
 			amount = msg.value;
 			alpha = 0x8996e6cac2ae843e42e467b2ebe83e1520d1dc27;
 			beta = 0xc07272da006fc380eb4c8aed2285b9bc8e41b358;
@@ -24,7 +22,7 @@ contract Splitter {
 
 	function doSplit() returns (bool sent) {
 		alpha.send (amount / 2);
-        beta.send (this.balance);
+        	beta.send (this.balance);
 	}
 
 }
