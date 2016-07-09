@@ -1,17 +1,17 @@
 // This contract receives ether and splits it between two hard-coded addresses. By Chris Dannen
 
 contract Splitter {
-		mapping (address => uint) balances;
-		address alpha;
-		address beta;
-		uint amount;
+		mapping (address => uint) public balances;
+		address public alpha;
+		address public beta;
+		uint public amount;
 
     	modifier noSelf () { 
     		if(tx.origin == alpha) 
     			throw;
 		if(tx.origin == beta) 
 			throw; 
- 			_
+ 		_
 		}
 
 		function Splitter(){
